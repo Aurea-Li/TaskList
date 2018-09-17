@@ -57,3 +57,10 @@ Started GET "/tasks" for 127.0.0.1 at 2018-09-17 13:51:17 -0700
 NameError - uninitialized constant TasksController:
 
 Started POST "/__better_errors/ac92f7c519e56364/variables" for 127.0.0.1 at 2018-09-17 13:51:17 -0700
+Started GET "/tasks" for 127.0.0.1 at 2018-09-17 13:56:10 -0700
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 253ms (Views: 250.3ms | ActiveRecord: 0.0ms)
+
+
