@@ -23,3 +23,37 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 16ms (Views: 6.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-09-17 13:48:18 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Aurea/.rvm/gems/ruby-2.5.1/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Aurea/.rvm/gems/ruby-2.5.1/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (3.2ms)
+Completed 200 OK in 20ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-17 13:49:50 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Aurea/.rvm/gems/ruby-2.5.1/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Aurea/.rvm/gems/ruby-2.5.1/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2018-09-17 13:49:58 -0700
+
+NameError - uninitialized constant TasksController:
+
+Started POST "/__better_errors/7586aef6c2837152/variables" for 127.0.0.1 at 2018-09-17 13:49:58 -0700
+Started GET "/tasks" for 127.0.0.1 at 2018-09-17 13:50:53 -0700
+
+NameError - uninitialized constant TasksController:
+
+Started POST "/__better_errors/eae5e63479892e7a/variables" for 127.0.0.1 at 2018-09-17 13:50:53 -0700
+Started GET "/tasks" for 127.0.0.1 at 2018-09-17 13:50:55 -0700
+
+NameError - uninitialized constant TasksController:
+
+Started POST "/__better_errors/045a844aff1ddde9/variables" for 127.0.0.1 at 2018-09-17 13:50:55 -0700
+Started GET "/tasks" for 127.0.0.1 at 2018-09-17 13:51:17 -0700
+
+NameError - uninitialized constant TasksController:
+
+Started POST "/__better_errors/ac92f7c519e56364/variables" for 127.0.0.1 at 2018-09-17 13:51:17 -0700
