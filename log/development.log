@@ -314,3 +314,66 @@ Processing by TasksController#index as HTML
 Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-09-18 15:29:13 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Aurea/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Aurea/.rvm/gems/ruby-2.5.1/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Aurea/.rvm/gems/ruby-2.5.1/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 20ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/1" for 127.0.0.1 at 2018-09-18 15:29:17 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `[]' for #<Class:0x00007fc50b41de80>:
+  app/controllers/tasks_controller.rb:8:in `show'
+
+Started POST "/__better_errors/c3416e78f29f9057/variables" for 127.0.0.1 at 2018-09-18 15:29:17 -0700
+Started GET "/tasks/0" for 127.0.0.1 at 2018-09-18 15:29:24 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"0"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `[]' for #<Class:0x00007fc50b41de80>:
+  app/controllers/tasks_controller.rb:8:in `show'
+
+Started POST "/__better_errors/9b3ced589526aa46/variables" for 127.0.0.1 at 2018-09-18 15:29:24 -0700
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+Started GET "/tasks/0" for 127.0.0.1 at 2018-09-18 15:30:03 -0700
+Started GET "/tasks/0" for 127.0.0.1 at 2018-09-18 15:30:13 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"0"}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 212ms (Views: 198.5ms | ActiveRecord: 4.1ms)
+
+
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"0"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 37ms (Views: 25.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tasks/0" for 127.0.0.1 at 2018-09-18 15:30:39 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"0"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 20ms (Views: 16.0ms | ActiveRecord: 0.4ms)
+
+
