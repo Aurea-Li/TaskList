@@ -1,9 +1,16 @@
-<ul>
 
-<% @tasks.each do |task| %>
+<div class="index-task-page">
 
-  <li> <%= task.name %> : <%= task.description %> </li>
+  <ul>
 
-<% end %>
+    <% @tasks.each do |task| %>
 
-</ul>
+    <li> <%= task.name %> : <%= task.description %> </li>
+
+    <% end %>
+
+  </ul>
+
+  <%= link_to "New Task", new_task_path %>
+
+</div>

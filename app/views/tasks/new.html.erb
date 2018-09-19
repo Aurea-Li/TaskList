@@ -1,15 +1,20 @@
 
 
-<%= form_with model: @task, class: 'new-task-form' do |f| %>
 
-  <h2>New Task Form</h2>
+<div class="new-task-page">
+  <%= form_with model: @task, class: 'new-task-form' do |f| %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+    <h2>New Task Form</h2>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
 
-  <%= f.submit "Create New Task", class: "new-task-submit-button" %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
 
-<% end %>
+    <%= f.submit "Create New Task", class: "new-task-submit-button" %>
+
+  <% end %>
+
+  <%= link_to "Home", tasks_path %>
+</div>
