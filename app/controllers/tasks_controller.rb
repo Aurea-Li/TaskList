@@ -5,7 +5,7 @@ class TasksController < ApplicationController
 
   def show
     task_id = params[:id].to_i
-    @task = Task.all[task_id]
+    @task = Task.find(task_id)
 
     if @task.nil?
       head :not_found
@@ -30,8 +30,7 @@ class TasksController < ApplicationController
   end
 
   def edit
-    task_id = params[:id].to_i
-    @task = Task.find_by(id: task_id)
+    @task = Task.find_by(id: params[:id].to_i)
 
     if @task.nil?
       head :not_found
@@ -39,19 +38,20 @@ class TasksController < ApplicationController
   end
 
   def update
-    name = params[:task][:name]
-    description = params[:task][:description]
 
-    if name && description
-      @task.update(name: name, description: description)
-    elsif name
-      @task.update(name: name)
-    elsif description
-      @task.update(description: description)
+    @task = Task.find_by(id: params[:id].to_i)
+
+
+    @task.update(
+      name: params[:task][:name],
+      description: params[:task][:description]
+    )
+
+    if @task.save
+      redirect_to tasks_path
     else
-      head :no_content
+      render :edit
     end
 
-    @task.save
   end
 end

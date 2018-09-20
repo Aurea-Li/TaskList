@@ -5,7 +5,11 @@
 
     <% @tasks.each do |task| %>
 
-    <li> <%= task.name %> : <%= task.description %> </li>
+    <li>
+      <%= task.name %> : <%= task.description %> : <%= task.id %>
+      <%= link_to "(View Details)", task_path(task.id) %>
+      <%= link_to "(Edit Task)", edit_task_path(task.id) %>
+    </li>
 
     <% end %>
 
