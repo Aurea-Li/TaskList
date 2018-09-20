@@ -1,1 +1,4 @@
 <h3> This is the webpage for task <%= @task.name %> : <%= @task.description %> </h3>
+
+
+<%= link_to "Delete Task", delete_task_path(@task.id), method: :delete %>

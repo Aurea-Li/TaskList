@@ -16,3 +16,8 @@ main {
 ul {
   height: 100%;
 }
+
+li {
+  display: flex;
+  flex-direction: column;
+}

@@ -41,7 +41,6 @@ class TasksController < ApplicationController
 
     @task = Task.find_by(id: params[:id].to_i)
 
-
     @task.update(
       name: params[:task][:name],
       description: params[:task][:description]
@@ -52,6 +51,15 @@ class TasksController < ApplicationController
     else
       render :edit
     end
+  end
 
+  def destroy
+    @task = Task.find_by(id: params[:id].to_i)
+
+    if @task.destroy
+      redirect_to tasks_path
+    else
+      head :not_found
+    end
   end
 end
