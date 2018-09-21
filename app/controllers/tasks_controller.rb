@@ -33,9 +33,11 @@ class TasksController < ApplicationController
 
     @task = find_task
 
-    #TODO: error checking
-    @task.update(task_params)
-    redirect_to tasks_path
+
+    if @task.update(task_params)
+      redirect_to tasks_path
+    else
+      head :not_acceptable
   end
 
   def complete
