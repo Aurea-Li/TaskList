@@ -4,8 +4,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    task_id = params[:id].to_i
-    @task = get_id
+    @task = find_task
 
     if @task.nil?
       head :not_found
@@ -27,19 +26,19 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = get_id
+    @task = find_task
   end
 
   def update
 
-    @task = get_id
+    @task = find_task
 
     @task.update(task_params)
     redirect_to tasks_path
   end
 
   def complete
-    @task = get_id
+    @task = find_task
 
     @task.update(
       completion_date: (Time.now).to_s
@@ -48,7 +47,7 @@ class TasksController < ApplicationController
   end
 
   def uncomplete
-    @task = get_id
+    @task = find_task
 
     @task.update(
       completion_date: nil
@@ -57,7 +56,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = get_id
+    @task = find_task
 
     @task.destroy
     redirect_to tasks_path
@@ -72,7 +71,7 @@ class TasksController < ApplicationController
     )
   end
 
-  def get_id
+  def find_task
     return Task.find_by(id: params[:id].to_i)
   end
 end
