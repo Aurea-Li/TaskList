@@ -12,6 +12,7 @@
       <%= link_to "Mark Complete", complete_task_path(task.id), method: :patch %>
       <% else %>
       <del> <strong> <%= task.name %> : <%= task.description %> </strong> </del>
+      <%= link_to "Unmark Complete", uncomplete_task_path(task.id), method: :patch %>
       <% end %>
 
       <%= link_to "(View Details)", task_path(task.id) %>

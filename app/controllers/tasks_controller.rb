@@ -65,6 +65,18 @@ class TasksController < ApplicationController
     end
   end
 
+  def uncomplete
+    @task = Task.find_by(id: params[:id].to_i)
+
+    @task.update(
+      completion_date: nil
+    )
+
+    if @task.save
+      redirect_to tasks_path
+    end
+  end
+
   def destroy
     @task = Task.find_by(id: params[:id].to_i)
 
