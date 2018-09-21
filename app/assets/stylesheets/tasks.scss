@@ -2,22 +2,46 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// * {
+//   border: 2px solid red;
+// }
+
 body {
-  background-color: #F0FFFF;
+  font-family: Arial;
 }
-
+h1 {
+  text-align: center;
+}
 main {
-  margin-left: 10%;
-  margin-right: 10%;
-  padding-left: 5%;
-  padding-right: 5%;
+  background-color: #F0FFFF;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  // margin-left: 10%;
+  // margin-right: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+
 }
 
-ul {
+.index-task-page {
+border: 2px solid black;
+border-radius: 5rem;
+}
+
+.index-task-page h2 {
+  text-align: center;
+}
+
+.index-task-page ul {
   height: 100%;
-}
-
-li {
   display: flex;
   flex-direction: column;
+}
+
+.index-task-page li {
+  display: grid;
+  
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
