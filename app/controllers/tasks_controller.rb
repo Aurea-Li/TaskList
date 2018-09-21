@@ -31,10 +31,6 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find_by(id: params[:id].to_i)
-
-    if @task.nil?
-      head :not_found
-    end
   end
 
   def update
@@ -45,12 +41,7 @@ class TasksController < ApplicationController
       name: params[:task][:name],
       description: params[:task][:description]
     )
-
-    if @task.save
-      redirect_to tasks_path
-    else
-      render :edit
-    end
+    redirect_to tasks_path
   end
 
   def complete
@@ -59,10 +50,7 @@ class TasksController < ApplicationController
     @task.update(
       completion_date: (Time.now).to_s
     )
-
-    if @task.save
-      redirect_to tasks_path
-    end
+    redirect_to tasks_path
   end
 
   def uncomplete
@@ -71,19 +59,13 @@ class TasksController < ApplicationController
     @task.update(
       completion_date: nil
     )
-
-    if @task.save
-      redirect_to tasks_path
-    end
+    redirect_to tasks_path
   end
 
   def destroy
     @task = Task.find_by(id: params[:id].to_i)
 
-    if @task.destroy
-      redirect_to tasks_path
-    else
-      head :not_found
-    end
+    @task.destroy
+    redirect_to tasks_path
   end
 end
