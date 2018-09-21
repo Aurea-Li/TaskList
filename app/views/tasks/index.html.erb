@@ -11,24 +11,25 @@
 
       <% if task.completion_date.nil? %>
 
-        <%= link_to task_path(task.id) do %>
-          <strong> <%= task.name %> : <%= task.description %> </strong>
-        <% end %>
-
-        <%= link_to "Mark Complete", complete_task_path(task.id), method: :patch %>
-      <% else %>
-        <%= link_to task_path(task.id) do %>
-          <del> <strong> <%= task.name %> : <%= task.description %> </strong> </del>
-        <% end %>
-
-        <%= link_to "Unmark Complete", uncomplete_task_path(task.id), method: :patch %>
+      <%= link_to task_path(task.id) do %>
+      <strong> <%= task.name %> : <%= task.description %> </strong>
       <% end %>
 
-      <%= link_to "(Edit Task)", edit_task_path(task.id) %>
-      <%= link_to "Delete Task", task_path(task.id), method: :delete, data: {confirm: "Are you sure you want to delete #{task.name}"} %>
+      <div class= "task-links">
+        <%= link_to "Mark Complete", complete_task_path(task.id), method: :patch %>
+        <% else %>
+        <%= link_to task_path(task.id) do %>
+        <del> <strong> <%= task.name %> : <%= task.description %> </strong> </del>
+        <% end %>
+        <div class= "task-links">
+          <%= link_to "Unmark Complete", uncomplete_task_path(task.id), method: :patch %>
+          <% end %>
 
-    </li>
-    <% end %>
-  </ul>
-  <%= link_to "New Task", new_task_path %>
-</div>
+          <%= link_to "Edit Task", edit_task_path(task.id) %>
+          <%= link_to "Delete Task", task_path(task.id), method: :delete, data: {confirm: "Are you sure you want to delete #{task.name}"} %>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+
+  </div>

@@ -30,14 +30,12 @@ class TasksController < ApplicationController
   end
 
   def update
-
     @task = find_task
-
-
     if @task.update(task_params)
       redirect_to tasks_path
     else
       head :not_acceptable
+    end
   end
 
   def complete
@@ -73,8 +71,9 @@ class TasksController < ApplicationController
       :description
     )
   end
-
+  
   def find_task
     return Task.find_by(id: params[:id].to_i)
   end
+
 end

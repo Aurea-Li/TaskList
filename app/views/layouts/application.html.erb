@@ -7,11 +7,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet">
   </head>
 
   <body>
-    <main>
+
+      <nav>
       <h1> TASKLIST </h1>
+      <%= link_to "All Tasks", tasks_path %>
+      <%= link_to "New Task", new_task_path %>
+      </nav>
+
+    <main>
       <%= yield %>
     </main>
 
