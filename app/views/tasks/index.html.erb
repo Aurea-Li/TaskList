@@ -6,9 +6,17 @@
     <% @tasks.each do |task| %>
 
     <li>
+
+      <% if task.completion_date.nil? %>
       <strong> <%= task.name %> : <%= task.description %> </strong>
+      <%= link_to "Mark Complete", complete_task_path(task.id), method: :patch %>
+      <% else %>
+      <del> <strong> <%= task.name %> : <%= task.description %> </strong> </del>
+      <% end %>
+
       <%= link_to "(View Details)", task_path(task.id) %>
       <%= link_to "(Edit Task)", edit_task_path(task.id) %>
+      <%= link_to "Delete Task", task_path(task.id), method: :delete, data: {confirm: "Are you sure you want to delete #{task.name}"} %>
     </li>
 
     <% end %>
